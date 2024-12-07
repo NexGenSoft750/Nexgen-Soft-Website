@@ -1,0 +1,11 @@
+@media (max-width: 772px) {
+    .hero-section-title{
+        font-size: 12px;
+    }
+    .hero-section-heading {
+        font-size: 21px;
+    }
+    .hero-section-para{
+        font-size: 15px !important;
+    }
+}
