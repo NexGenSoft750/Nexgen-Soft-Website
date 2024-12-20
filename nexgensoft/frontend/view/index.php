@@ -26,7 +26,7 @@
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
         <a class="navbar-brand" href="#">
-        <img src="./assets/images/gen-logo3.png" alt="Logo" style="height: 45px; width: 100px;"/></a>
+        <img src="../assets/images/nexgen_soft.png" alt="Logo" style="height: 45px; width: 100px;"/></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -88,7 +88,7 @@
             <?php if($services) { 
                     foreach($services as $key => $service) {
             ?>
-                <div class="col-12 col-lg-6 col-xxl-4">
+                <div class="col-12 col-xxl-6">
                     <div class="service-img position-relative">
                         <img src="/uploads/<?=$service['service_img']?>" alt="service img" class="img-fluid rounded">
                         <div class="services-icons border-2 border-light rounded d-flex align-items-center justify-content-center position-absolute" style="background-color:rgb(139 61 255);">
