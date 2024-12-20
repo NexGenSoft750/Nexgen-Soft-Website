@@ -21,7 +21,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <link rel="stylesheet" href="./style.css">
 </head>
-<body>    
+<body> 
 <header>
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
@@ -34,6 +34,9 @@
                 <ul class="nav nav-pills mx-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link text-light active" aria-current="page" href="#">Active</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="./services.html">Services</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-light" href="./services.html">Services</a>
@@ -82,118 +85,37 @@
             </div>
         </div>
         <div class="row g-4 mt-5">
-            <div class="col-12 col-lg-6 col-xxl-4">
-                <div class="service-img position-relative">
-                     <img src="./assets/images/service_1.jpg" alt="service img" class="img-fluid rounded">
-                     <div class="services-icons border-2 border-light rounded d-flex align-items-center justify-content-center position-absolute" style="background-color:rgb(139 61 255);">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" class="bi bi-vector-pen text-white-stable" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M10.646.646a.5.5 0 0 1 .708 0l4 4a.5.5 0 0 1 0 .708l-1.902 1.902-.829 3.313a1.5 1.5 0 0 1-1.024 1.073L1.254 14.746 4.358 4.4A1.5 1.5 0 0 1 5.43 3.377l3.313-.828L10.646.646zm-1.8 2.908-3.173.793a.5.5 0 0 0-.358.342l-2.57 8.565 8.567-2.57a.5.5 0 0 0 .34-.357l.794-3.174-3.6-3.6z"></path>
-                            <path fill-rule="evenodd" d="M2.832 13.228 8 9a1 1 0 1 0-1-1l-4.228 5.168-.026.086.086-.026z"></path>
-                        </svg>
-                     </div>
+            <?php if($services) { 
+                    foreach($services as $key => $service) {
+            ?>
+                <div class="col-12 col-lg-6 col-xxl-4">
+                    <div class="service-img position-relative">
+                        <img src="/uploads/<?=$service['service_img']?>" alt="service img" class="img-fluid rounded">
+                        <div class="services-icons border-2 border-light rounded d-flex align-items-center justify-content-center position-absolute" style="background-color:rgb(139 61 255);">
+                            <?=$service['service_icon']?>
+                        </div>
+                    </div>
+                    <div class="service-body p-4 pt-5">
+                        <div class="h3 fw-bold service-title"><?=$service['service_name']?></div>
+                        <p class="fs-6 mt-3 service-description" style="color:#64748b;">
+                            <?=$service['service_description']?>
+                        </p>
+                        <div class="service-badges d-flex flex-wrap gap-3">
+                            <?php if($service['services_tags']) {
+                                    foreach($service['services_tags'] as $key => $tag) { 
+                            ?>
+                            <span class="badge rounded-pill px-3 py-2 text-dark" style="background-color: #e8d8ff;"><?=$tag?></span>
+                            <?php
+                                    }
+                                } 
+                            ?>
+                        </div>
+                    </div>
                 </div>
-                <div class="service-body p-4 pt-5">
-                     <div class="h3 fw-bold service-title">Website Design</div>
-                     <p class="fs-6 mt-3 service-description" style="color:#64748b;">
-                        We design visually stunning and user- friendly websites that elevate your online presence. We provide client-centric ui/ux services that are user-friendly and aesthetic at the same time. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                     </p>
-                     <div class="service-badges d-flex flex-wrap gap-3">
-                        <span class="badge rounded-pill px-3 py-2 text-dark" style="background-color: #e8d8ff;">Design Systems</span>
-                        <span class="badge rounded-pill px-3 py-2 text-dark" style="background-color: #e8d8ff;">Wireframes and Testing</span>
-                        <span class="badge rounded-pill px-3 py-2 text-dark" style="background-color: #e8d8ff;">User Flow</span>
-                     </div>
-                     <a href="#" class="d-inline-flex align-items-center mt-4 service-detail-link">
-                        <span class="me-1">View Case Study</span> 
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="14" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
-                        </svg>
-                    </a>
-                </div>
-            </div>
-            <div class="col-12 col-lg-6 col-xxl-4">
-                <div class="service-img position-relative">
-                     <img src="./assets/images/service_2.jpg" alt="service img" class="img-fluid rounded">
-                      <div class="services-icons border-2 border-light rounded d-flex align-items-center justify-content-center position-absolute" style="background-color:rgb(139 61 255);">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" class="bi bi-vector-pen text-white-stable" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M10.646.646a.5.5 0 0 1 .708 0l4 4a.5.5 0 0 1 0 .708l-1.902 1.902-.829 3.313a1.5 1.5 0 0 1-1.024 1.073L1.254 14.746 4.358 4.4A1.5 1.5 0 0 1 5.43 3.377l3.313-.828L10.646.646zm-1.8 2.908-3.173.793a.5.5 0 0 0-.358.342l-2.57 8.565 8.567-2.57a.5.5 0 0 0 .34-.357l.794-3.174-3.6-3.6z"></path>
-                            <path fill-rule="evenodd" d="M2.832 13.228 8 9a1 1 0 1 0-1-1l-4.228 5.168-.026.086.086-.026z"></path>
-                        </svg>
-                     </div>
-                </div>
-                <div class="service-body p-4 pt-5">
-                     <div class="h3 fw-bold service-title">Web Development</div>
-                     <p class="fs-6 mt-3 service-description" style="color:#64748b;">
-                        We build reliable, scalable solutions that deliver your vision and exceed your expectations. Web development is the work involved in developing a website lorem ipsum simple dummy content.
-                     </p>
-                     <div class="service-badges d-flex flex-wrap gap-3">
-                        <span class="badge rounded-pill px-3 py-2 text-dark" style="background-color: #e8d8ff;">Design Systems</span>
-                        <span class="badge rounded-pill px-3 py-2 text-dark" style="background-color: #e8d8ff;">Wireframes and Testing</span>
-                        <span class="badge rounded-pill px-3 py-2 text-dark" style="background-color: #e8d8ff;">User Flow</span>
-                     </div>
-                     <a href="#" class="d-inline-flex align-items-center mt-4 service-detail-link">
-                        <span class="me-1">View Case Study</span> 
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="14" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
-                        </svg>
-                    </a>
-                </div>
-            </div>
-            <div class="col-12 col-lg-6 col-xxl-4">
-                <div class="service-img position-relative">
-                     <img src="./assets/images/service_3.jpg" alt="service img" class="img-fluid rounded">
-                      <div class="services-icons border-2 border-light rounded d-flex align-items-center justify-content-center position-absolute" style="background-color:rgb(139 61 255);">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" class="bi bi-vector-pen text-white-stable" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M10.646.646a.5.5 0 0 1 .708 0l4 4a.5.5 0 0 1 0 .708l-1.902 1.902-.829 3.313a1.5 1.5 0 0 1-1.024 1.073L1.254 14.746 4.358 4.4A1.5 1.5 0 0 1 5.43 3.377l3.313-.828L10.646.646zm-1.8 2.908-3.173.793a.5.5 0 0 0-.358.342l-2.57 8.565 8.567-2.57a.5.5 0 0 0 .34-.357l.794-3.174-3.6-3.6z"></path>
-                            <path fill-rule="evenodd" d="M2.832 13.228 8 9a1 1 0 1 0-1-1l-4.228 5.168-.026.086.086-.026z"></path>
-                        </svg>
-                     </div>
-                </div>
-                <div class="service-body p-4 pt-5">
-                     <div class="h3 fw-bold service-title">eCommerce Development</div>
-                     <p class="fs-6 mt-3 service-description" style="color:#64748b;">
-                       We are at the forefront of modern e-commerce development. Which mainly means adding your logo to the Shopify store template we’ve used for the past six years. The Shopify stack for headless commerce.
-                     </p>
-                     <div class="service-badges d-flex flex-wrap gap-3">
-                        <span class="badge rounded-pill px-3 py-2 text-dark" style="background-color: #e8d8ff;">Design Systems</span>
-                        <span class="badge rounded-pill px-3 py-2 text-dark" style="background-color: #e8d8ff;">Wireframes and Testing</span>
-                        <span class="badge rounded-pill px-3 py-2 text-dark" style="background-color: #e8d8ff;">User Flow</span>
-                     </div>
-                     <a href="#" class="d-inline-flex align-items-center mt-4 service-detail-link">
-                        <span class="me-1">View Case Study</span> 
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="14" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
-                        </svg>
-                    </a>
-                </div>
-            </div>
-            <div class="col-12 col-lg-6 col-xxl-4">
-                <div class="service-img position-relative">
-                     <img src="./assets/images/service_4.jpg" alt="service img" class="img-fluid rounded">
-                      <div class="services-icons border-2 border-light rounded d-flex align-items-center justify-content-center position-absolute" style="background-color:rgb(139 61 255);">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" class="bi bi-vector-pen text-white-stable" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M10.646.646a.5.5 0 0 1 .708 0l4 4a.5.5 0 0 1 0 .708l-1.902 1.902-.829 3.313a1.5 1.5 0 0 1-1.024 1.073L1.254 14.746 4.358 4.4A1.5 1.5 0 0 1 5.43 3.377l3.313-.828L10.646.646zm-1.8 2.908-3.173.793a.5.5 0 0 0-.358.342l-2.57 8.565 8.567-2.57a.5.5 0 0 0 .34-.357l.794-3.174-3.6-3.6z"></path>
-                            <path fill-rule="evenodd" d="M2.832 13.228 8 9a1 1 0 1 0-1-1l-4.228 5.168-.026.086.086-.026z"></path>
-                        </svg>
-                     </div>
-                </div>
-                <div class="service-body p-4 pt-5">
-                     <div class="h3 fw-bold service-title">Mobile Development</div>
-                     <p class="fs-6 mt-3 service-description" style="color:#64748b;">
-                        Mobile app development is the act or process by which a mobile app is developed for one or more mobile devices, which can include personal digital assistants, enterprise digital assistants, or mobile phones.
-                     </p>
-                     <div class="service-badges d-flex flex-wrap gap-3">
-                        <span class="badge rounded-pill px-3 py-2 text-dark" style="background-color: #e8d8ff;">Design Systems</span>
-                        <span class="badge rounded-pill px-3 py-2 text-dark" style="background-color: #e8d8ff;">Wireframes and Testing</span>
-                        <span class="badge rounded-pill px-3 py-2 text-dark" style="background-color: #e8d8ff;">User Flow</span>
-                     </div>
-                     <a href="#" class="d-inline-flex align-items-center mt-4 service-detail-link">
-                        <span class="me-1">View Case Study</span> 
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="14" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
-                        </svg>
-                    </a>
-                </div>
-            </div>
+            <?php
+                    }
+                }    
+            ?>    
         </div>
     </div>
 </section>

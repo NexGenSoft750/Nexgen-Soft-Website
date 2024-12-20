@@ -1,0 +1,41 @@
+version: '3.8'
+x-bb-common: &common
+  networks:
+      - app-network
+  restart: unless-stopped
+
+services:
+  php:
+    build: .
+    container_name: nexgensoft_backend_php
+    volumes:
+      - .:/var/www/html
+    ports:
+      - "8084:80"
+    depends_on:
+      - db
+    environment:
+      - MYSQL_HOST=db
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=nexgensoft@12345
+      - MYSQL_DB=nexgensoft
+    <<: *common
+
+  db:
+    image: mysql:8.0
+    container_name: nexgensoft_db
+    environment:
+      MYSQL_ROOT_PASSWORD: nexgensoft@12345
+      MYSQL_DATABASE: nexgensoft
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+    <<: *common
+
+volumes:
+  db_data:
+
+networks:
+  app-network:
+    driver: bridge
