@@ -19,14 +19,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="<?php echo assets('css/style.css'); ?>">
+    <link rel="stylesheet" href="<?php echo assets('css/media.css'); ?>">
 </head>
 <body> 
 <header>
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
         <a class="navbar-brand" href="#">
-        <img src="<?php echo assets('images/nexgen_soft.png'); ?>" alt="Logo" style="height: 45px; width: 100px;"/></a>
+        <img src="<?php echo assets('images/nexgen_soft_logo.png'); ?>" alt="Logo" style="height: 45px; width: 100px;"/></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -225,10 +226,10 @@
                                                 <img src="<?php echo assets('images/team-long-img-1.jpg'); ?>" alt="team" class="img-fluid rounded-3">
                                             </div>
                                             <div>
-                                                <img src="./assets/images/team-long-img-2.jpg" alt="team" class="img-fluid rounded-3">
+                                                <img src="<?php echo assets('images/team-long-img-2.jpg'); ?>" alt="team" class="img-fluid rounded-3">
                                             </div>
                                             <div class="mt-5">
-                                                <img src="./assets/images/team-long-img-3.jpg" alt="team" class="img-fluid rounded-3">
+                                                <img src="<?php echo assets('images/team-long-img-3.jpg'); ?>" alt="team" class="img-fluid rounded-3">
                                             </div>
                                         </div>
                                     </div>
@@ -377,7 +378,7 @@
                 <div class="card-main shadow-lg border-0">
                     <div class="row g-0">
                         <div class="col-md-6 d-none d-md-block rounded-start-2 form-img">
-                            <!-- for mobile img -->
+                            <img src="<?php echo assets('images/it-company-form-img.jpg'); ?>" alt="team" class="img-fluid rounded-3">
                         </div>
                         <div class="col-xl-6 col-md-6 bg-white ">
                             <div class="card-body card-main-text p-3 p-md-5">
@@ -453,11 +454,11 @@
                 <div class="col">
                     <div class="logo-img-container text-center mb-4">
                         <div class="images d-flex justify-content-center flex-wrap gap-5">
-                            <img src="./assets/images/clients-logo-1.svg" alt="logo 1" class="img-fluid">
-                            <img src="./assets/images/clients-logo-2.svg" alt="logo 2" class="img-fluid">
-                            <img src="./assets/images/clients-logo-3.svg" alt="logo 3" class="img-fluid">
-                            <img src="./assets/images/clients-logo-4.svg" alt="logo 4" class="img-fluid">
-                            <img src="./assets/images/clients-logo-5.svg" alt="logo 5" class="img-fluid">
+                            <img src="<?php echo assets('images/clients-logo-1.svg'); ?>" alt="logo 1" class="img-fluid">
+                            <img src="<?php echo assets('images/clients-logo-2.svg'); ?>" alt="logo 2" class="img-fluid">
+                            <img src="<?php echo assets('images/clients-logo-3.svg'); ?>" alt="logo 3" class="img-fluid">
+                            <img src="<?php echo assets('images/clients-logo-4.svg'); ?>" alt="logo 4" class="img-fluid">
+                            <img src="<?php echo assets('images/clients-logo-5.svg'); ?>" alt="logo 5" class="img-fluid">
                         </div>
                     </div>
                 </div>
@@ -468,7 +469,7 @@
                     <!-- Left Side -->
                     <div class="left-side text-color">
                         <a href="#">
-                            <img src="./assets/images/logo.svg" alt="logo" class="img-fluid mb-4" />
+                            <img src="<?php echo assets('images/logo.svg'); ?>" alt="logo" class="img-fluid mb-4" />
                         </a>
                         <p class="p-left-side">Build faster websites with Block multipurpose</p>
                         <p class="p-left-side">bootstrap 5 template. Duis imper diet mollis</p>
@@ -603,7 +604,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
-<script src="./script.js" defer></script>
+<script src="<?php echo assets('js/script.js') ?>" defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 <script src="https://cdn.rawgit.com/michalsnik/aos/2.3.1/dist/aos.js"></script>
