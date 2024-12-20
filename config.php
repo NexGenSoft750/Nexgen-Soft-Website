@@ -5,6 +5,7 @@
     $uri = substr($path, 1);
     $_SESSION['uri'] = $uri;
 
+
     if (strpos($uri, 'admin') !== false) {
         $_SESSION['dir'] = 'admin';
     } else {
@@ -18,6 +19,7 @@
     define('ADMIN_MODEL_PATH', './nexgensoft/admin/models/');
     define('CATALOG_MODEL_PATH', './nexgensoft/backend/models/');
     define('BASE_URL', 'http://localhost:8084');
+    define('DIR_ASSETS', 'http://localhost:8084/nexgensoft/frontend/assets/');
 
     ob_start();
     require_once CATALOG_CONTROLLER_PATH . 'BaseController' . '.php';

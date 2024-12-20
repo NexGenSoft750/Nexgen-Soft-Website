@@ -43,4 +43,10 @@ if (!function_exists('redirect')) {
     }
 }
 
+if (!function_exists('assets')) {
+    function assets(string $path) : string {
+        return DIR_ASSETS . $path;
+    }
+}
+
 ?>

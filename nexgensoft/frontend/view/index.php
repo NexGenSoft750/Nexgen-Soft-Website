@@ -26,7 +26,7 @@
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
         <a class="navbar-brand" href="#">
-        <img src="../assets/images/nexgen_soft.png" alt="Logo" style="height: 45px; width: 100px;"/></a>
+        <img src="<?php echo assets('images/nexgen_soft.png'); ?>" alt="Logo" style="height: 45px; width: 100px;"/></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -60,7 +60,7 @@
     </nav>
     <div class="video-wrapper">
         <video autoplay muted loop playsinline>
-            <source src="./assets/videos/video_4k.mp4" type="video/mp4">
+            <source src="<?php echo assets('videos/video_4k.mp4'); ?>" type="video/mp4">
         </video>
     </div>
     <div class="centered-text">
@@ -168,7 +168,7 @@
                                     </div>
                                     <div class="col-lg-7">
                                         <div class="position-relative">
-                                            <img src="./assets/images/it-company-about-img_2.jpg" alt="about"
+                                            <img src="<?php echo assets('images/it-company-about-img_2.jpg'); ?>" alt="about"
                                                 class="rounded-3 img-fluid">
                                         </div>
                                     </div>
@@ -180,7 +180,7 @@
                                         <div class="d-flex flex-column gap-4 text-center text-lg-start mx-4 mx-lg-auto">
                                             <div>
                                                 <span class=" bg-opacity-10 rounded icon-shape icon-xl">
-                                                    <img src="./assets/images/innovation.svg" alt="innovation">
+                                                    <img src="<?php echo assets('images/innovation.svg'); ?>" alt="innovation">
                                                 </span>
                                             </div>
                                             <div>
@@ -193,7 +193,7 @@
                                         <div class="d-flex flex-column gap-4 text-center text-lg-start mx-4 mx-lg-auto">
                                             <div>
                                                 <span class=" bg-opacity-10 rounded icon-shape icon-xl">
-                                                    <img src="./assets/images/integrity.svg" alt="integrity">
+                                                    <img src="<?php echo assets('images/integrity.svg'); ?>" alt="integrity">
                                                 </span>
                                             </div>
                                             <div>
@@ -206,7 +206,7 @@
                                         <div class="d-flex flex-column gap-4 text-center text-lg-start mx-4 mx-lg-auto">
                                             <div>
                                                 <span class=" bg-opacity-10 rounded icon-shape icon-xl">
-                                                    <img src="./assets/images/hands-clapping.svg" alt="clapping">
+                                                    <img src="<?php echo assets('images/hands-clapping.svg'); ?>" alt="clapping">
                                                 </span>
                                             </div>
                                             <div>
@@ -222,7 +222,7 @@
                                     <div class="col-lg-7">
                                         <div class="d-flex gap-lg-4 gap-2 justify-content-center">
                                             <div class="mt-5">
-                                                <img src="./assets/images/team-long-img-1.jpg" alt="team" class="img-fluid rounded-3">
+                                                <img src="<?php echo assets('images/team-long-img-1.jpg'); ?>" alt="team" class="img-fluid rounded-3">
                                             </div>
                                             <div>
                                                 <img src="./assets/images/team-long-img-2.jpg" alt="team" class="img-fluid rounded-3">
