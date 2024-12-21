@@ -3,6 +3,9 @@
 $routes = [
     '/' => ['HomeController', 'list'],
     'services' => ['ServicesController', 'index'],
+    'portfolio' => ['PortfolioController', 'index'],
+    'contactUs' => ['ContactUsController', 'index'],
+    'caseStudy' => ['CaseStudyController', 'index'],
     'admin' => ['Dashboard', 'index'],
     'admin/login' => ['Login', 'index'],
     'admin/login/submit' => ['Login', 'submit'],
@@ -11,6 +14,7 @@ $routes = [
     'admin/services' => ['Services', 'index'],
     'admin/services/getForm' => ['Services', 'getForm'],
     'admin/services/delete' => ['Services', 'delete'],
+
 ];
 
 function requireController($controllerInfo): void
