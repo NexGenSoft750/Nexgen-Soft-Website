@@ -266,7 +266,6 @@ a {
 }
 
 .hero-section {
-    background-image: url('../assets/hero-section-bg.svg');
     background-repeat: no-repeat;
     background-position: top;
 }
@@ -299,6 +298,10 @@ a {
     bottom: -13%;
     left: 5%;
     padding: 15px;
+}
+
+.services-icons svg{
+   color: white !important;
 }
 
 .heading {
