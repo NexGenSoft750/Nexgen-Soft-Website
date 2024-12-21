@@ -12,9 +12,11 @@ class ServicesController extends BaseController
 
     public function index(): void {
         $data = [];
+        $data['header'] = $this->load->controller('Header'); 
 
         $data['services'] = $this->getServices();
-      
+
+        $data['footer'] = $this->load->controller('Footer');
         echo $this->render('services', $data);
     }
 
