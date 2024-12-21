@@ -16,13 +16,15 @@ class HomeController extends BaseController
 
     public function list(): void {
         $data = [];
-
+        $data['header'] = $this->load->controller('Header'); 
+        
         $data['services'] = $this->getServices();
 
         $data['company_email'] = $this->setting->get('config_email');
 
         $data['sendEnqueryAction'] = $this->baseUrl('home/sendEnquiry');
       
+        $data['footer'] = $this->load->controller('Footer');
         echo $this->render('index', $data);
     }
 
