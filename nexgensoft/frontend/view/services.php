@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="./media.css">
 </head>
 <body>
-<header class="container-fluid pt-5 hero-section">
+<header class="container-fluid pt-5 hero-section" style="background-image:" . <?=assets('images/hero-section-bg.svg')?>>
     <div class="container">
         <div class="row">
             <div class="col-12 text-center">
@@ -98,11 +98,11 @@
                 <div class="col">
                     <div class="logo-img-container text-center mb-4">
                         <div class="images d-flex justify-content-center flex-wrap gap-5">
-                            <img src="{{ asset('assets/clients-logo-1.svg') }}" alt="logo 1" class="img-fluid">
-                            <img src="{{ asset('assets/clients-logo-2.svg') }}" alt="logo 2" class="img-fluid">
-                            <img src="{{ asset('assets/clients-logo-3.svg') }}" alt="logo 3" class="img-fluid">
-                            <img src="{{ asset('assets/clients-logo-4.svg') }}" alt="logo 4" class="img-fluid">
-                            <img src="{{ asset('assets/clients-logo-5.svg') }}" alt="logo 5" class="img-fluid">
+                            <img src="<?=assets('images/clients-logo-1.svg')?>" alt="logo 1" class="img-fluid">
+                            <img src="<?=assets('images/clients-logo-2.svg')?>" alt="logo 2" class="img-fluid">
+                            <img src="<?=assets('images/clients-logo-3.svg')?>" alt="logo 3" class="img-fluid">
+                            <img src="<?=assets('images/clients-logo-4.svg')?>" alt="logo 4" class="img-fluid">
+                            <img src="<?=assets('images/clients-logo-5.svg')?>" alt="logo 5" class="img-fluid">
                         </div>
                     </div>
                 </div>
@@ -113,7 +113,7 @@
                     <!-- Left Side -->
                     <div class="left-side">
                         <a href="#">
-                            <img src="{{ asset('assets/logo.svg') }}" alt="logo" class="img-fluid mb-4" />
+                            <img src="<?=assets('images/logo.svg')?>" alt="logo" class="img-fluid mb-4" />
                         </a>
                         <p class="p-left-side">Build faster websites with Block multipurpose</p>
                         <p class="p-left-side">bootstrap 5 template. Duis imper diet mollis</p>
