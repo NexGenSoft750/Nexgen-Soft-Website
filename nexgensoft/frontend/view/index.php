@@ -23,7 +23,59 @@
     <link rel="stylesheet" href="<?php echo assets('css/media.css'); ?>">
 </head>
 <body> 
+<header>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+        <a class="navbar-brand" href="#">
+        <img src="<?php echo assets('images/nexgen_soft_logo.png'); ?>" alt="Logo" style="height: 45px; width: 100px;"/></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="nav nav-pills mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="<?=baseUrl('')?>">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="<?=baseUrl('services')?>">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="./portfolio.html">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="./case_study.html">Case Study</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="./contact_us.html">Contact</a>
+                    </li>
+                </ul>
+                <div class="d-flex gap-2">
+                    <button type="button" class="btn btn-secondary">Login</button>
+                    <button type="button" class="btn btn-primary">Create account</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="video-wrapper">
+        <video autoplay muted loop playsinline>
+            <source src="<?php echo assets('videos/video_4k.mp4'); ?>" type="video/mp4">
+        </video>
+    </div>
+    <div class="centered-text">
+        <p class="fs-1  fw-bold hide-on-small">Empowering Your Business Through Cutting-Edge IT Solutions</p>
+        <p class="fs-5 fw-semibold text-light hide-on-small">Innovative IT solutions, meticulously tailored for your success – where technology meets excellence for seamless business transformation.</p>
+        <div class="d-flex justify-content-center gap-3 mt-4">
+            <button class="btn px-5 py-2 btn-primary fs-6 fw-medium rounded-pill">Get Free Estimation</button>
+            <button class="btn px-5 py-2  text-light fs-6 fw-medium d-flex  align-items-center gap-2" id="recent-projects-btn">
+                <span>Recent Projects</span>
+                <i class="fa fa-long-arrow-right text-light" style="transform: translateY(2px)" aria-hidden="true"></i>
+            </button>
+        </div>
+    </div>
+</header>
+
 <?php echo $header; ?>
+
 
 <section class="container-fluid service-section">
     <div class="container">
@@ -331,43 +383,48 @@
                         </div>
                         <div class="col-xl-6 col-md-6 bg-white ">
                             <div class="card-body card-main-text p-3 p-md-5">
-                                <form class="row needs-validation g-3" novalidate>
+                                <form action="<?=$sendEnqueryAction?>" method="POST" class="row needs-validation g-3" novalidate>
                                     <div class="col-lg-12 py-2">
                                         <h3 class="heading">Ready to Transform Your Business?</h3>
                                         <p class="heading-para">
                                             Drop us a line about your project at
-                                            <span><a href="mailto:contact@example.com">contact@example.com</a></span>
+                                            <span><a href="mailto:<?=$company_email?>"><?=$company_email?></a></span>
                                             or via the contact form below, and we will contact you soon.
                                         </p>
                                     </div>
                                     <div class="col-lg-6 col-12">
                                         <label for="companyFirstnameInput" class="form-label">First Name <span class="text-danger">*</span></label>
-                                        <input type="text" class="form-control" id="companyFirstnameInput" required>
+                                        <input type="text" name="first_name" class="form-control" id="companyFirstnameInput" required>
                                         <div class="invalid-feedback">Please enter firstname.</div>
                                     </div>
                                     <div class="col-lg-6 col-12">
-                                        <label for="companyNameInput" class="form-label">Company <span class="text-danger">*</span></label>
-                                        <input type="text" class="form-control" id="companyNameInput" required>
+                                        <label for="companyLastnameInput" class="form-label">Last Name <span class="text-danger">*</span></label>
+                                        <input type="text" name="last_name" class="form-control" id="companyLastnameInput" required>
+                                        <div class="invalid-feedback">Please enter lastname.</div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label for="companyNameInput" class="form-label">Company</label>
+                                        <input type="email" name="company_name" class="form-control" id="companyNameInput" required>
                                         <div class="invalid-feedback">Please enter company name.</div>
                                     </div>
                                     <div class="col-md-12">
                                         <label for="companyEmailInput" class="form-label">Work Email <span class="text-danger">*</span></label>
-                                        <input type="email" class="form-control" id="companyEmailInput" required>
+                                        <input type="email" name="email" class="form-control" id="companyEmailInput" required>
                                         <div class="invalid-feedback">Please enter email.</div>
                                     </div>
                                     <div class="col-md-12">
                                         <label for="companyPhoneInput" class="form-label">Phone <span class="text-danger">*</span></label>
-                                        <input type="tel" class="form-control" id="companyPhoneInput" required>
+                                        <input type="tel" name="phone_number" class="form-control" id="companyPhoneInput" required>
                                         <div class="invalid-feedback">Please enter phone.</div>
                                     </div>
                                     <div class="col-md-12">
                                         <label for="companyTextarea" class="form-label">Describe your idea</label>
-                                        <textarea class="form-control" id="companyTextarea" placeholder="Write to us" rows="3" required></textarea>
+                                        <textarea name="message" class="form-control" id="companyTextarea" placeholder="Write to us" rows="3" required></textarea>
                                         <div class="invalid-feedback">Please write a message.</div>
                                     </div>
                                     <div class="col-12">
                                         <div class="form-check py-2">
-                                            <input class="form-check-input" type="checkbox" id="companyCheckagree" required>
+                                            <input class="form-check-input" name="agree" type="checkbox" id="companyCheckagree" required>
                                             <label class="form-check-label" for="companyCheckagree">
                                                 I agree to the <a href="#!" style="color: #8B3DFF;">privacy policy</a>
                                             </label>
@@ -376,7 +433,7 @@
                                     </div>
                                     <div class="container-fluid full-height d-flex justify-content-center align-items-center">
                                         <div class="d-grid gap-2 w-100">
-                                            <button class="btn-primary btn-business " type="button">Let's work together!</button>
+                                            <button class="btn-primary btn-business " type="submit">Let's work together!</button>
                                         </div>
                                     </div>
                                 </form>

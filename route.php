@@ -2,6 +2,7 @@
 
 $routes = [
     '/' => ['HomeController', 'list'],
+    'home/sendEnquiry' => ['HomeController', 'sendEnquiry'],
     'services' => ['ServicesController', 'index'],
     'portfolio' => ['PortfolioController', 'index'],
     'contactUs' => ['ContactUsController', 'index'],

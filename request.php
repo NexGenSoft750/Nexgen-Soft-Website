@@ -13,6 +13,10 @@ class Request {
         return isset($_FILES[$key]) ? $_FILES[$key] : null;
     }
 
+    public function isPostRequest(): bool {
+        return $_SERVER['REQUEST_METHOD'] === 'POST';
+    }    
+
     public function all() {
         return array_merge(
             $_GET,
