@@ -17,9 +17,10 @@
     define('ADMIN_PATH', './nexgensoft/admin/');
     define('ADMIN_CONTROLLER_PATH', './nexgensoft/admin/controllers/');
     define('ADMIN_MODEL_PATH', './nexgensoft/admin/models/');
-    define('CATALOG_MODEL_PATH', './nexgensoft/backend/models/');
-    define('BASE_URL', 'http://localhost:8084');
-    define('DIR_ASSETS', 'http://localhost:8084/nexgensoft/frontend/assets/');
+    define('CATALOG_MODEL_PATH', './nexgensoft/backend/models/');   
+    // For live environment
+    define('BASE_URL', 'https://nexgensoft.io');  // Update to live site URL
+    define('DIR_ASSETS', 'https://nexgensoft.io/nexgensoft/frontend/assets/');  // Update to correct live path
 
     ob_start();
     require_once CATALOG_CONTROLLER_PATH . 'BaseController' . '.php';

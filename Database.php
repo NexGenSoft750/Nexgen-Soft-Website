@@ -5,12 +5,19 @@ class Database {
 
     public function __construct()
     {
-        $host = getenv('MYSQL_HOST');
-        $user = getenv('MYSQL_USER');
-        $password = getenv('MYSQL_PASSWORD');
-        $database = getenv('MYSQL_DB');
+        // Replace environment variables with actual values
+        $host = 'localhost';  // Use 'localhost' or your actual MySQL host
+        $user = 'u743791645_root';  // Your database username
+        $password = 'Nexgensoft12@.';  // Your database password
+        $database = 'u743791645_nexgensoft';  // Your database name
 
+        // Establish the database connection
         $this->connection = mysqli_connect($host, $user, $password, $database);
+
+        // Check if the connection was successful
+        if (mysqli_connect_errno()) {
+            die("Connection failed: " . mysqli_connect_error());
+        }
     }
 
     public function query($sql) {
